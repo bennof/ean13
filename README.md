@@ -1,4 +1,4 @@
-# ean1^3
+# ean13
 
 Encoding for EAN13 with Checksum
 
@@ -12,7 +12,7 @@ This should work:
 
 missing
 
-There is a little Example in the `_example`folder.
+There is a little Example in the `_example` folder.
 
 ## License
 

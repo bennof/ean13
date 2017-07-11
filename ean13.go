@@ -84,7 +84,7 @@ func (e EAN13) Is(pre EAN13, n int) bool {
 
 func (e EAN13) Decode(prefix EAN13, n int) (int64, error) {
 	if !e.Is(prefix,n) {return 0, ERROR_PREFIX_MISMATCH}
-	i = int64(e-prefix)
+	i := int64(e-prefix)
 	i /=10
 	return i, nil
 } 

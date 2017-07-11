@@ -20,7 +20,7 @@ func main () {
 	if err != nil {fmt.Println(err); os.Exit(1)}
 
 	//Create ean in private section
-	r := ean13.New(int64(in), ean13.PRIVATE)
+	r := ean13.Encode(int64(in), ean13.PRIVATE)
 	fmt.Println("Output:", r)
 
 	// Validate result

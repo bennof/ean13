@@ -21,7 +21,8 @@ var (
 func main() {
 	fmt.Println("Certificate")
 	fmt.Println("Copyright 2017 Benjamin 'Benno' Falkner. All rights reserved.")
-
+	flag.Parse()
+	
 	var out *bufio.Writer
 	if *name == "" {
 		out = bufio.NewWriter(os.Stdout) 

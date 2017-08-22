@@ -33,7 +33,7 @@ func main() {
 	}
 
 	for i := int64(0); i < (*count) ; i++ {
-		e,err := ean13.Encode(*start+i*10,ean13.NULL)
+		e,err := ean13.Encode(*start+i,ean13.NULL)
 		if err != nil {fmt.Println(err); os.Exit(1)}
 		out.WriteString(e.String())
 		out.Write([]byte("\r\n"))

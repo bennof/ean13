@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	start = flag.Int64("s", 2000000000000, "Start with number.")
+	start = flag.Int64("s", 20000000000, "Start with number (don't set check digit).")
 	count = flag.Int64("c", 1, "Number of EAN13 to generate.")
 	name = flag.String("o", "", "Filename for output (default is STDOUT).")
 )

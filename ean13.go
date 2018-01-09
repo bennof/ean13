@@ -117,3 +117,24 @@ func Encode(in int64, prefix EAN13) (EAN13, error) {
 	return e, nil
 }
 
+// database sql scanner
+func (e EAN13)Scan(src interface{}) error {
+	if src == nil { return ERROR_INVALID }
+	switch src.(type) {
+	case int64:
+		e = EAN13(src.(int64)) 	
+		
+	case string:
+		in, err := strconv.Atoi(src.(string))
+		if err != nil { return err }
+		e = EAN13(in)	
+	default:
+		return ERROR_INVALID
+	}
+	
+	if e.Validate() {
+		return nil
+	}
+	e = NaN
+	return ERROR_INVALID
+}
